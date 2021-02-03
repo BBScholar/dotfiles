@@ -1,0 +1,7 @@
+[user]
+	email = bbs27@case.edu
+	name = Ben Scholar
+[credential]
+	helper = store
+[core]
+	editor = nvim
