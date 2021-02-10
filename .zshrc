@@ -132,6 +132,9 @@ alias rs-docs="cargo docserver"
 
 alias dotfile='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
-source /opt/ros/noetic/setup.zsh
+source /opt/ros/melodic/setup.zsh
+tmux source ~/.tmux.conf
 export JAVA_HOME="$(dirname $(dirname $(realpath $(which javac))))"
 export EDITOR="nvim"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

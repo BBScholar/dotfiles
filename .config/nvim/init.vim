@@ -7,7 +7,6 @@ call plug#begin()
 Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
@@ -37,8 +36,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-abolish'
 Plug 'Yggdroot/indentLine'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 Plug 'KabbAmine/vCoolor.vim'
@@ -48,6 +45,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Plug 'terryma/vim-multiple-cursors'
@@ -57,10 +56,13 @@ Plug 'timonv/vim-cargo'
 Plug 'rust-lang/rust.vim'
 
 Plug 'wikitopian/hardmode'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'rhysd/vim-clang-format'
 " Entertainment
-"Plug 'ryanss/vim-hackernews'
+Plug 'google/vim-maktaba'
+Plug 'bazelbuild/vim-bazel'
+" :Plug 'ryanss/vim-hackernews'
 
 call plug#end()
 
