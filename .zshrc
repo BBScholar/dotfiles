@@ -81,18 +81,31 @@ export EDITOR="nvim"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-alias ls="exa"
-alias lsl="exa -l"
-alias l="exa -l"
-alias lsa="exa -a"
+
+SUDO_CMD=$([ -x "$(command -v doas)" ] && echo "doas" || echo "sudo")
+LS_CMD=$([ -x "$(command -v exa)" ] && echo "exa" || echo "ls")
+CD_CMD=$([ -x "$(command -v z)" ] && echo "z" || echo "cd")
+
+alias sudo="${SUDO_CMD} "
+alias sudo="${SUDO_CMD} "
+
+alias ls="${LS_CMD} "
+alias lsl="${LS_CMD} -l"
+alias l="${LS_CMD} -l"
+alias ll="l"
+alias lsa="${LS_CMD} -a"
+
+alias cd="$CD_CMD"
 
 alias vim="nvim"
 alias vi="nvim"
+alias v="nvim"
+alias edit="nvim"
+alias nano="nvim"
 
 alias cat="bat"
-alias cd="z"
 
+# config editor shortcuts
 alias zshconfig="nvim ~/.zshrc"
 alias srczsh="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
@@ -101,4 +114,6 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$(go env GOPATH)/bin:$PATH
 
-eval "$(zellij setup --generate-auto-start zsh)"
+if [ -x "$(command -v zellij)" ]; then
+  eval "$(zellij setup --generate-auto-start zsh)"
+fi
